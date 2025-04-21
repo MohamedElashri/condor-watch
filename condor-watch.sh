@@ -52,9 +52,10 @@ send_email() {
     echo "$body" | msmtp --subject="$subject" "$EMAIL_TO"
 }
 
-# Main monitoring loop
+# Monitoring loop
 for JOB_ID in $JOBS_TO_MONITOR; do
     STATE_FILE="${STATE_DIR}/${JOB_ID}.status"
+    
     CURRENT_STATUS_CODE=$(condor_q "$JOB_ID" -format "%d\n" JobStatus 2>/dev/null || echo -1)
     CURRENT_STATUS=$(status_name "$CURRENT_STATUS_CODE")
 
