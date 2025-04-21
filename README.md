@@ -81,9 +81,9 @@ If this works, `condor-watch` is ready to send alerts.
 
 ## Usage
 
-1. Clone the repo and configure:
+1. Clone the repo and configure `condor-watch.conf`:
    ```bash
-   cp condor-watch.conf.example condor-watch.conf
+   git clone https://github.com/MohamedElashri/condor-watch
    ```
 
 2. Make the script executable:
